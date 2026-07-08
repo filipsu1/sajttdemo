@@ -11,12 +11,21 @@
             --accent: #228b22;
         }
 
-        body {
+  body {
             margin: 0;
             padding: 40px;
             background: var(--bg);
             color: var(--ink);
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern, clinical sans */
+            /* Updated to a high-end, clean serif stack */
+            font-family: "Iowan Old Style", "Apple Garamond", "Baskerville", serif;
+        }
+
+        h1 { 
+            font-size: 8rem; 
+            margin: 0; 
+            letter-spacing: -0.02em; /* Slightly wider spacing for serif readability */
+            line-height: 0.9; 
+            font-weight: 400; /* Serifs often look better at lower weights */
         }
 
         /* Layout Grid */
