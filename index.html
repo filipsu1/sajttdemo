@@ -2,101 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Threshold</title>
+    <title>test sajt</title>
     <style>
         :root {
-            --bg: #fdfaf0;
-            --ink: #0a0a0a;
+            --bg: #1a1a1a;
+            --text: #f4f4f4;
+            --accent: #ff3e00;
         }
 
         body {
             margin: 0;
-            padding: 40px;
+            padding: 5vh 5vw;
             background: var(--bg);
-            color: var(--ink);
-            /* Sans-serif for body/UI */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.4;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .wrapper { max-width: 1400px; margin: 0 auto; }
 
-        header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; }
+        header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20vh; }
+        .name { font-size: 1.2rem; letter-spacing: -0.02em; font-weight: 500; }
         
-        /* Serif Title */
-        h1 { 
-            font-family: "Baskerville", serif; 
-            font-size: 8rem; 
-            margin: 0; 
-            letter-spacing: -0.02em; 
-            line-height: 0.9; 
-            font-weight: 400; 
-        }
-
-        /* Inline, Hover-and-Expand Menu */
-        nav { display: flex; gap: 30px; align-items: baseline; }
-        
+        nav { display: flex; gap: 40px; }
         .nav-link { 
+            color: var(--text); 
             text-decoration: none; 
-            color: var(--ink); 
-            font-size: 1.1rem; 
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
         }
+        .nav-link:hover { color: var(--accent); }
 
-        .nav-link:hover { 
-            letter-spacing: 0.15em; /* Expand effect */
-            font-weight: 600;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 60vh;
-            background: #e0e0e0;
-            grid-column: 1 / -1;
-        }
-
-        main { grid-column: 1 / 2; }
+        .hero-layout { display: flex; gap: 10vw; align-items: flex-start; margin-bottom: 20vh; }
         
-        .updates { font-size: 0.9rem; margin-top: 40px; }
-        .update-item { border-top: 1px solid var(--ink); padding: 10px 0; }
+        .hero-left { width: 50%; }
+        .feature-img { width: 100%; margin-bottom: 3vh; }
+        .feature-img img { width: 100%; height: auto; display: block; }
+        .about-text { font-size: 1rem; color: #aaa; max-width: 400px; }
+        
+        .hero-text { width: 40%; }
+        .hero-text h1 { font-size: 5vw; margin: 0; font-weight: 700; line-height: 0.9; }
+
+        .content-stream { display: flex; justify-content: space-between; gap: 10vw; }
+        .work-list { width: 60%; list-style: none; padding: 0; }
+        .work-item { padding: 4vh 0; border-top: 1px solid #333; }
+        .work-title { font-size: 2.5rem; }
+
+        .updates-col { width: 30%; }
+        .updates-title { 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.15em; 
+            color: #888; 
+            margin-bottom: 3vh;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1vh;
+        }
+        .update-item { margin-bottom: 3vh; font-size: 0.9rem; }
+        .update-date { color: var(--accent); display: block; font-weight: bold; margin-bottom: 0.5vh; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="wrapper">
         <header>
-            <h1>THRESHOLD</h1>
+            <div class="name">WRITER_NAME / 2026</div>
             <nav>
-                <a href="#" class="nav-link">Poetry/Prose</a>
-                <a href="#" class="nav-link">Texts</a>
-                <a href="#" class="nav-link">Workshops</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="#" class="nav-link">poezija</a>
+                <a href="#" class="nav-link">proza</a>
+                <a href="#" class="nav-link">kontakt</a>
             </nav>
         </header>
 
-        <div class="hero-image"></div>
+        <section class="hero-layout">
+            <div class="hero-left">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhY2Vob2xkZXJ8ZW58MHx8MHx8fDA%3D" alt="placeholder">
+                </div>
+                <div class="about-text">
+nešto o meni                </div>
+            </div>
+            <div class="hero-text">
+                <h1>placeholder text.</h1>
+            </div>
+        </section>
 
-        <main>
-            <p style="font-size: 1.5rem; line-height: 1.4;">
-                A digital laboratory for the preservation of ephemeral subcultures and the documentation of technical entropy. 
-                This space serves as the primary node for our ongoing archival efforts.
-            </p>
-        </main>
+        <section class="content-stream">
+            <main class="work-list">
+                <div class="work-item">
+                    <div class="work-title">RAD I</div>
+                    <p>Published in The Literary Review, 2026</p>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">RAD II</div>
+                    <p>XYZ Award Shortlist, 2026</p>
+                </div>
+            </main>
 
-        <aside class="updates">
-            <strong>UPDATES</strong>
-            <div class="update-item">08.07.26 // Archive migration started</div>
-            <div class="update-item">07.07.26 // New workshop listing</div>
-        </aside>
+            <aside class="updates-col">
+                <div class="updates-title">novosti</div>
+                <div class="update-item">
+                    <span class="update-date">08.07.26</span>
+tekst o novostima                </div>
+                <div class="update-item">
+                    <span class="update-date">07.01.26</span>
+tekst o novostima                </div>
+            </aside>
+        </section>
     </div>
 
 </body>
