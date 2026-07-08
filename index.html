@@ -2,115 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test sajt</title>
+    <title>Writer's Retreat</title>
     <style>
-        :root {
-            --bg: #1a1a1a;
-            --text: #f4f4f4;
-            --accent: #ff3e00;
-        }
-
         body {
             margin: 0;
-            padding: 5vh 5vw;
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', -apple-system, sans-serif;
-            line-height: 1.4;
+            padding: 0 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
-        .wrapper { max-width: 1400px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; padding-bottom: 100px; }
 
-        header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20vh; }
-        .name { font-size: 1.2rem; letter-spacing: -0.02em; font-weight: 500; }
+        /* Existing Header and Hero styles from previous step */
+        header { display: flex; justify-content: space-between; padding: 15px 0; font-size: 14px; border-bottom: 1px solid #333; margin-bottom: 30px; }
+        h1 { font-size: 7rem; font-weight: 800; margin: 0 0 30px 0; letter-spacing: -0.05em; line-height: 0.9; }
+        .hero-img { width: 100%; border-top: 1px solid #333; padding-top: 30px; margin-bottom: 60px; }
+        .hero-img img { width: 100%; display: block; }
+
+        /* New Content Area */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
+        .readings-list { font-size: 14px; }
+        .bio-text { font-size: 14px; line-height: 1.5; }
         
-        nav { display: flex; gap: 40px; }
-        .nav-link { 
-            color: var(--text); 
-            text-decoration: none; 
-            font-size: 0.9rem; 
-            text-transform: uppercase; 
-            letter-spacing: 0.1em;
-            transition: color 0.3s;
-        }
-        .nav-link:hover { color: var(--accent); }
-
-        .hero-layout { display: flex; gap: 10vw; align-items: flex-start; margin-bottom: 20vh; }
-        
-        .hero-left { width: 50%; }
-        .feature-img { width: 100%; margin-bottom: 3vh; }
-        .feature-img img { width: 100%; height: auto; display: block; }
-        .about-text { font-size: 1rem; color: #aaa; max-width: 400px; }
-        
-        .hero-text { width: 40%; }
-        .hero-text h1 { font-size: 5vw; margin: 0; font-weight: 700; line-height: 0.9; }
-
-        .content-stream { display: flex; justify-content: space-between; gap: 10vw; }
-        .work-list { width: 60%; list-style: none; padding: 0; }
-        .work-item { padding: 4vh 0; border-top: 1px solid #333; }
-        .work-title { font-size: 2.5rem; }
-
-        .updates-col { width: 30%; }
-        .updates-title { 
-            font-size: 0.7rem; 
-            text-transform: uppercase; 
-            letter-spacing: 0.15em; 
-            color: #888; 
-            margin-bottom: 3vh;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1vh;
-        }
-        .update-item { margin-bottom: 3vh; font-size: 0.9rem; }
-        .update-date { color: var(--accent); display: block; font-weight: bold; margin-bottom: 0.5vh; }
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; font-size: 14px; border-top: 1px solid #fff; }
+        th, td { text-align: left; padding: 10px 0; border-bottom: 1px solid #333; }
+        .table-title { font-size: 12px; color: #888; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="container">
         <header>
-            <div class="name">WRITER_NAME / 2026</div>
-            <nav>
-                <a href="#" class="nav-link">poezija</a>
-                <a href="#" class="nav-link">proza</a>
-                <a href="#" class="nav-link">kontakt</a>
-            </nav>
+            <div>Cargo™ Demo</div>
+            <div>Information</div>
+            <a href="#" style="color:#fff;">Mail, IG ↗</a>
         </header>
 
-        <section class="hero-layout">
-            <div class="hero-left">
-                <div class="feature-img">
-                    <img src="https://images.unsplash.com/photo-1599009434802-ca1dd09895e7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhY2Vob2xkZXJ8ZW58MHx8MHx8fDA%3D" alt="placeholder">
-                </div>
-                <div class="about-text">
-nešto o meni                </div>
-            </div>
-            <div class="hero-text">
-                <h1>placeholder text.</h1>
-            </div>
-        </section>
+        <h1>Writer’s<br>Retreat</h1>
 
-        <section class="content-stream">
-            <main class="work-list">
-                <div class="work-item">
-                    <div class="work-title">RAD I</div>
-                    <p>2026</p>
-                </div>
-                <div class="work-item">
-                    <div class="work-title">RAD II</div>
-                    <p> 2026</p>
-                </div>
-            </main>
+        <div class="hero-img">
+            <img src="https://freight.cargo.site/w/1000/i/V2753988137244703944500098564391/Writer-in-Room.jpg" alt="Writer's Retreat">
+        </div>
 
-            <aside class="updates-col">
-                <div class="updates-title">novosti</div>
-                <div class="update-item">
-                    <span class="update-date">08.07.26</span>
-tekst o novostima                </div>
-                <div class="update-item">
-                    <span class="update-date">07.01.26</span>
-tekst o novostima                </div>
-            </aside>
-        </section>
+        <!-- Bio and Readings Section -->
+        <div class="info-grid">
+            <div class="readings-list">
+                <div style="font-weight:bold; margin-bottom:10px;">Readings Mon–Sat</div>
+                <div>1. Marcel Proust — <i>À la recherche du temps perdu</i></div>
+                <div>2. Samuel Beckett — <i>Proust</i></div>
+            </div>
+            <div class="bio-text">
+                Prof. Olivia Theyskens, born April 15, 1976, is a fictitious American literary critic... <a href="#" style="color:#fff;">Read more...</a>
+            </div>
+        </div>
+
+        <!-- Schedule Table -->
+        <div class="table-title">Readings 1–6</div>
+        <table>
+            <tr><td>Monday</td><td>Proust</td><td>Selection 1</td><td>1</td></tr>
+            <tr><td>Tuesday</td><td>Proust</td><td>Selection 2</td><td>2</td></tr>
+            <tr><td>Wednesday</td><td>Proust</td><td>Selection 3</td><td>3</td></tr>
+            <tr><td>Thursday</td><td>Beckett</td><td>Part 1</td><td>4</td></tr>
+            <tr><td>Friday</td><td>Beckett</td><td>Part 2</td><td>5</td></tr>
+            <tr><td>Saturday</td><td>Beckett</td><td>Part 3</td><td>6</td></tr>
+        </table>
     </div>
 
 </body>
