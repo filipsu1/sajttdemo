@@ -3,84 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Literary Archive</title>
+    <title>The Threshold | Literary Journal</title>
     <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #222222;
+            --accent-color-1: #228b22; /* Deep green */
+            --accent-color-2: #e31a1c; /* Rich red */
+        }
+
         body {
             margin: 0;
-            padding: 60px 40px;
-            /* System serif stack for an elegant, clean look */
-            font-family: "Iowan Old Style", "Apple Garamond", "Baskerville", "Times New Roman", serif;
-            color: #1a1a1a;
-            background-color: #fcfcfc;
-            line-height: 1.6;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 100px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
             padding: 0;
+            height: 100vh;
+            display: flex;
+            font-family: "Baskerville", "Times New Roman", serif; /* Strong, clean serif */
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow: hidden; /* Prevent outer scroll */
         }
 
-        nav a {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-size: 0.9rem;
+        /* --- Left Panel (Nav & Brand) --- */
+        .sidebar {
+            width: 25%;
+            background-color: var(--bg-color);
+            border-right: 2px solid var(--accent-color-1);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            margin-top: 0;
         }
 
-        main {
-            max-width: 600px; /* Constrains text for better readability */
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            margin-bottom: 20px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        /* Minimalist underline effect */
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--text-color);
+            transition: width 0.3s;
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        .info-box {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #555;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        /* --- Right Panel (Content) --- */
+        .main-content {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 80px;
+            overflow-y: auto; /* Allow content to scroll */
+            box-sizing: border-box;
+        }
+
+        .content-wrapper {
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-
-        .meta {
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 40px;
+        .date {
+            font-size: 0.9rem;
             text-transform: uppercase;
+            color: #777;
+            margin-bottom: 20px;
+            display: block;
         }
 
-        .content p {
+        h1.article-title {
+            font-size: 3rem;
+            font-weight: 400;
+            margin: 0 0 60px 0;
+            line-height: 1.1;
+        }
+
+        .prose p {
+            font-size: 1.2rem;
+            line-height: 1.8;
             margin-bottom: 2em;
-            font-size: 1.1rem;
+        }
+        
+        /* A bold stylistic choice for the first letter, echoing the red chair */
+        .prose p:first-of-type::first-letter {
+            font-size: 4rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            color: var(--accent-color-2);
+            font-family: Georgia, serif;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 2px solid var(--accent-color-1);
+                padding: 20px;
+            }
+            .main-content {
+                padding: 40px;
+            }
+            h1.article-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Author Name</div>
-        <ul>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div>
+            <h1 class="site-title">The Threshold</h1>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#">Current Issue</a></li>
+            <li><a href="#">Archives</a></li>
+            <li><a href="#">Manifesto</a></li>
+            <li><a href="#">Submissions</a></li>
         </ul>
+        <div class="info-box">
+            <p>Volume VII / Issue 3</p>
+            <p>ISSN 2331-897X</p>
+        </div>
     </nav>
 
-    <main>
-        <article>
-            <h1>The Title of Your Piece</h1>
-            <p class="meta">Published July 2026</p>
-            <div class="content">
-                <p>This is where your literary content begins. Keep the line length moderate to ensure the serif typography remains legible.</p>
-                <p>Use generous white space between paragraphs. The aesthetic of a digital literary journal is found in the lack of visual noise.</p>
+    <!-- Main Text Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <span class="date">July 16, 2026</span>
+            <h1 class="article-title">Notes on the Architecture of a Modern Mind</h1>
+            <div class="prose">
+                <p>It begins, as it often does, with a division. The world outside is a vibrant, unknowable green, framed by a structure that attempts to contain it. This is the essential tension we navigate: the internal landscape of thought and the external geography of experience. We sit here, illuminated by a slice of harsh, geometric light, much like the subject in `image_0.png` who is anchored by both a verdant view and a stark interior shadow.</p>
+                <p>Our words, transcribed in ink, are merely attempts to bridge this divide. This journal exists to explore that liminal space—the threshold where the architectural meets the organic, where the private act of creation meets the public need for discourse. We seek work that embodies this specific tension: clean, precise, and yet raw with meaning.</p>
+                <p>We invite you to cross over.</p>
             </div>
-        </article>
+        </div>
     </main>
 
 </body>
