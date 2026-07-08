@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test sajt</title>
-    <style>
+<style>
         :root {
             --bg: #fdfaf0;
             --ink: #0a0a0a;
-            --accent: #228b22;
         }
 
-  body {
+        body {
             margin: 0;
             padding: 40px;
             background: var(--bg);
@@ -19,15 +12,6 @@
             font-family: "Iowan Old Style", "Apple Garamond", "Baskerville", serif;
         }
 
-        h1 { 
-            font-size: 8rem; 
-            margin: 0; 
-            letter-spacing: -0.02em;
-            line-height: 0.9; 
-            font-weight: 200; /* Serifs often look better at lower weights */
-        }
-
-        /* Layout Grid */
         .container {
             display: grid;
             grid-template-columns: 1fr 300px;
@@ -38,7 +22,7 @@
 
         header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; }
         
-
+        /* Image now has no border and sits flush */
         .hero-image {
             width: 100%;
             height: 60vh;
@@ -46,46 +30,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--ink);
             grid-column: 1 / -1;
+            /* Border removed */
         }
 
-        /* Modern Typography */
-        h1 { font-size: 8rem; margin: 0; letter-spacing: -0.05em; line-height: 0.9; }
-        .nav-link { display: block; font-size: 1.2rem; margin-bottom: 10px; text-decoration: none; color: var(--ink); border-bottom: 1px solid transparent; }
-        .nav-link:hover { border-bottom: 1px solid var(--ink); }
+        h1 { font-size: 8rem; margin: 0; letter-spacing: -0.02em; line-height: 0.9; font-weight: 400; }
+        .nav-link { display: block; font-size: 1.2rem; margin-bottom: 10px; text-decoration: none; color: var(--ink); }
 
-        .updates { font-family: monospace; font-size: 0.9rem; margin-top: 40px; }
+        /* Inline text flow */
+        main { grid-column: 1 / 2; }
+        .aside-col { grid-column: 2 / 3; }
+        
+        .updates { font-family: sans-serif; font-size: 0.9rem; margin-top: 40px; }
         .update-item { border-top: 1px solid var(--ink); padding: 10px 0; }
     </style>
-</head>
-<body>
 
-    <div class="container">
-        <header>
-            <h1>Sajt</h1>
-            <nav>
-                <a href="#" class="nav-link">Poetry/Prose</a>
-                <a href="#" class="nav-link">Texts</a>
-                <a href="#" class="nav-link">Workshops</a>
-                <a href="#" class="nav-link">Contact</a>
-            </nav>
-        </header>
-
-        <div class="hero-image">
-Slika        </div>
-
-        <main>
-            <p style="font-size: 1.5rem; max-width: 600px;">
-Placeholder text            </p>
-        </main>
-
-        <aside class="updates">
-            <strong>UPDATES</strong>
-            <div class="update-item">08.07.26 // test started</div>
-            <div class="update-item">07.07.26 // test</div>
-        </aside>
+    <!-- Inside the container -->
+    <div class="hero-image">
+        [Image placeholder without border]
     </div>
 
-</body>
-</html>
+    <main>
+        <p style="font-size: 1.5rem; line-height: 1.4;">
+            A digital laboratory for the preservation of ephemeral subcultures and the documentation of technical entropy. 
+            This space serves as the primary node for our ongoing archival efforts, bridging the gap between 
+            the architectural precision of our visual work and the raw, evolving nature of our literary output.
+        </p>
+    </main>
