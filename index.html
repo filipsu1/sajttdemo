@@ -1,4 +1,10 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Threshold</title>
+    <style>
         :root {
             --bg: #fdfaf0;
             --ink: #0a0a0a;
@@ -9,7 +15,8 @@
             padding: 40px;
             background: var(--bg);
             color: var(--ink);
-            font-family: "Iowan Old Style", "Apple Garamond", "Baskerville", serif;
+            /* Sans-serif for body/UI */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         .container {
@@ -22,38 +29,75 @@
 
         header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; }
         
-        /* Image now has no border and sits flush */
+        /* Serif Title */
+        h1 { 
+            font-family: "Baskerville", serif; 
+            font-size: 8rem; 
+            margin: 0; 
+            letter-spacing: -0.02em; 
+            line-height: 0.9; 
+            font-weight: 400; 
+        }
+
+        /* Inline, Hover-and-Expand Menu */
+        nav { display: flex; gap: 30px; align-items: baseline; }
+        
+        .nav-link { 
+            text-decoration: none; 
+            color: var(--ink); 
+            font-size: 1.1rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover { 
+            letter-spacing: 0.15em; /* Expand effect */
+            font-weight: 600;
+        }
+
         .hero-image {
             width: 100%;
             height: 60vh;
             background: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             grid-column: 1 / -1;
-            /* Border removed */
         }
 
-        h1 { font-size: 8rem; margin: 0; letter-spacing: -0.02em; line-height: 0.9; font-weight: 400; }
-        .nav-link { display: block; font-size: 1.2rem; margin-bottom: 10px; text-decoration: none; color: var(--ink); }
-
-        /* Inline text flow */
         main { grid-column: 1 / 2; }
-        .aside-col { grid-column: 2 / 3; }
         
-        .updates { font-family: sans-serif; font-size: 0.9rem; margin-top: 40px; }
+        .updates { font-size: 0.9rem; margin-top: 40px; }
         .update-item { border-top: 1px solid var(--ink); padding: 10px 0; }
     </style>
+</head>
+<body>
 
-    <!-- Inside the container -->
-    <div class="hero-image">
-        [Image placeholder without border]
+    <div class="container">
+        <header>
+            <h1>THRESHOLD</h1>
+            <nav>
+                <a href="#" class="nav-link">Poetry/Prose</a>
+                <a href="#" class="nav-link">Texts</a>
+                <a href="#" class="nav-link">Workshops</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <div class="hero-image"></div>
+
+        <main>
+            <p style="font-size: 1.5rem; line-height: 1.4;">
+                A digital laboratory for the preservation of ephemeral subcultures and the documentation of technical entropy. 
+                This space serves as the primary node for our ongoing archival efforts.
+            </p>
+        </main>
+
+        <aside class="updates">
+            <strong>UPDATES</strong>
+            <div class="update-item">08.07.26 // Archive migration started</div>
+            <div class="update-item">07.07.26 // New workshop listing</div>
+        </aside>
     </div>
 
-    <main>
-        <p style="font-size: 1.5rem; line-height: 1.4;">
-            A digital laboratory for the preservation of ephemeral subcultures and the documentation of technical entropy. 
-            This space serves as the primary node for our ongoing archival efforts, bridging the gap between 
-            the architectural precision of our visual work and the raw, evolving nature of our literary output.
-        </p>
-    </main>
+</body>
+</html>
