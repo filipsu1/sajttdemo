@@ -3,144 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Threshold | Archive</title>
+    <title>The Threshold</title>
     <style>
         :root {
-            --bg-color: #fcf8e3; /* Soft yellowish tone */
-            --text-color: #222222;
-            --accent-green: #228b22;
-            --accent-red: #e31a1c;
+            --bg: #fdfaf0;
+            --ink: #0a0a0a;
+            --accent: #228b22;
         }
 
         body {
             margin: 0;
-            padding: 0;
-            display: flex;
-            font-family: "Baskerville", "Times New Roman", serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            min-height: 100vh;
-        }
-
-        /* --- Sidebar --- */
-        .sidebar {
-            width: 25%;
-            border-right: 2px solid var(--accent-green);
             padding: 40px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern, clinical sans */
         }
 
-        .site-title {
-            font-size: 1.5rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-list li {
-            margin-bottom: 15px;
-        }
-
-        .nav-list a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 1.1rem;
-        }
-
-        /* --- Main Content --- */
-        .main-content {
-            flex: 1;
-            padding: 80px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
-
-        .content-wrapper {
-            max-width: 700px;
+        /* Layout Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* --- Placeholder Image --- */
-        .image-placeholder {
+        header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; }
+        
+        /* The Image: Full width, dominant */
+        .hero-image {
             width: 100%;
-            height: 300px;
-            background-color: #ddd;
-            border: 2px solid var(--text-color);
-            margin: 20px 0 40px 0;
+            height: 60vh;
+            background: #e0e0e0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-style: italic;
+            border: 1px solid var(--ink);
+            grid-column: 1 / -1;
         }
 
-        .updates-section {
-            margin-top: 60px;
-            border-top: 2px solid var(--text-color);
-            padding-top: 20px;
-        }
+        /* Modern Typography */
+        h1 { font-size: 8rem; margin: 0; letter-spacing: -0.05em; line-height: 0.9; }
+        .nav-link { display: block; font-size: 1.2rem; margin-bottom: 10px; text-decoration: none; color: var(--ink); border-bottom: 1px solid transparent; }
+        .nav-link:hover { border-bottom: 1px solid var(--ink); }
 
-        .update-item {
-            margin-bottom: 20px;
-        }
-
-        .update-date {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--accent-red);
-            display: block;
-        }
-
-        h1 { font-size: 3rem; font-weight: 400; margin: 0; }
-        p { font-size: 1.1rem; line-height: 1.6; }
-
+        .updates { font-family: monospace; font-size: 0.9rem; margin-top: 40px; }
+        .update-item { border-top: 1px solid var(--ink); padding: 10px 0; }
     </style>
 </head>
 <body>
 
-    <nav class="sidebar">
-        <h1 class="site-title">The Threshold</h1>
-        <ul class="nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Poetry & Prose</a></li>
-            <li><a href="#">Texts</a></li>
-            <li><a href="#">Workshops</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>THRESHOLD</h1>
+            <nav>
+                <a href="#" class="nav-link">Poetry/Prose</a>
+                <a href="#" class="nav-link">Texts</a>
+                <a href="#" class="nav-link">Workshops</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+        </header>
 
-    <main class="main-content">
-        <div class="content-wrapper">
-            <h1>Archive</h1>
-            
-            <!-- Placeholder for your image -->
-            <div class="image-placeholder">
-                [Space for Site Visual / Architecture Image]
-            </div>
-
-            <p>Welcome to the digital archive. This site serves as a container for literary experiments, theoretical texts, and ongoing workshops. We operate at the intersection of the organic and the built environment.</p>
-
-            <section class="updates-section">
-                <h2>Updates</h2>
-                <div class="update-item">
-                    <span class="update-date">July 08, 2026</span>
-                    <p>New essay on digital decay added to the "Texts" section.</p>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">June 25, 2026</span>
-                    <p>Applications for the upcoming Autumn workshop are now open.</p>
-                </div>
-            </section>
+        <div class="hero-image">
+            [High-Resolution Architectural Space]
         </div>
-    </main>
+
+        <main>
+            <p style="font-size: 1.5rem; max-width: 600px;">
+                A digital laboratory for the preservation of ephemeral subcultures and the documentation of technical entropy.
+            </p>
+        </main>
+
+        <aside class="updates">
+            <strong>UPDATES</strong>
+            <div class="update-item">08.07.26 // Archive migration started</div>
+            <div class="update-item">07.07.26 // New workshop listing</div>
+        </aside>
+    </div>
 
 </body>
 </html>
