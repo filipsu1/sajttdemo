@@ -3,44 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Threshold | Literary Journal</title>
+    <title>The Threshold | Archive</title>
     <style>
         :root {
-            --bg-color: #f4f4f4;
+            --bg-color: #fcf8e3; /* Soft yellowish tone */
             --text-color: #222222;
-            --accent-color-1: #228b22; /* Deep green */
-            --accent-color-2: #e31a1c; /* Rich red */
+            --accent-green: #228b22;
+            --accent-red: #e31a1c;
         }
 
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             display: flex;
-            font-family: "Baskerville", "Times New Roman", serif; /* Strong, clean serif */
+            font-family: "Baskerville", "Times New Roman", serif;
             color: var(--text-color);
             background-color: var(--bg-color);
-            overflow: hidden; /* Prevent outer scroll */
+            min-height: 100vh;
         }
 
-        /* --- Left Panel (Nav & Brand) --- */
+        /* --- Sidebar --- */
         .sidebar {
             width: 25%;
-            background-color: var(--bg-color);
-            border-right: 2px solid var(--accent-color-1);
+            border-right: 2px solid var(--accent-green);
             padding: 40px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
         }
 
         .site-title {
             font-size: 1.5rem;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 0;
+            margin-bottom: 40px;
         }
 
         .nav-list {
@@ -50,48 +46,21 @@
         }
 
         .nav-list li {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .nav-list a {
             text-decoration: none;
             color: var(--text-color);
             font-size: 1.1rem;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        /* Minimalist underline effect */
-        .nav-list a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--text-color);
-            transition: width 0.3s;
         }
 
-        .nav-list a:hover::after {
-            width: 100%;
-        }
-
-        .info-box {
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #555;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-        }
-
-        /* --- Right Panel (Content) --- */
+        /* --- Main Content --- */
         .main-content {
             flex: 1;
-            background-color: #ffffff;
             padding: 80px;
-            overflow-y: auto; /* Allow content to scroll */
             box-sizing: border-box;
+            overflow-y: auto;
         }
 
         .content-wrapper {
@@ -99,88 +68,77 @@
             margin: 0 auto;
         }
 
-        .date {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: #777;
+        /* --- Placeholder Image --- */
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #ddd;
+            border: 2px solid var(--text-color);
+            margin: 20px 0 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .updates-section {
+            margin-top: 60px;
+            border-top: 2px solid var(--text-color);
+            padding-top: 20px;
+        }
+
+        .update-item {
             margin-bottom: 20px;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent-red);
             display: block;
         }
 
-        h1.article-title {
-            font-size: 3rem;
-            font-weight: 400;
-            margin: 0 0 60px 0;
-            line-height: 1.1;
-        }
+        h1 { font-size: 3rem; font-weight: 400; margin: 0; }
+        p { font-size: 1.1rem; line-height: 1.6; }
 
-        .prose p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2em;
-        }
-        
-        /* A bold stylistic choice for the first letter, echoing the red chair */
-        .prose p:first-of-type::first-letter {
-            font-size: 4rem;
-            float: left;
-            line-height: 0.8;
-            margin-right: 10px;
-            color: var(--accent-color-2);
-            font-family: Georgia, serif;
-        }
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                border-right: none;
-                border-bottom: 2px solid var(--accent-color-1);
-                padding: 20px;
-            }
-            .main-content {
-                padding: 40px;
-            }
-            h1.article-title {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar Navigation -->
     <nav class="sidebar">
-        <div>
-            <h1 class="site-title">The Threshold</h1>
-        </div>
+        <h1 class="site-title">The Threshold</h1>
         <ul class="nav-list">
-            <li><a href="#">Current Issue</a></li>
-            <li><a href="#">Archives</a></li>
-            <li><a href="#">Manifesto</a></li>
-            <li><a href="#">Submissions</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Poetry & Prose</a></li>
+            <li><a href="#">Texts</a></li>
+            <li><a href="#">Workshops</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
-        <div class="info-box">
-            <p>Volume VII / Issue 3</p>
-            <p>ISSN 2331-897X</p>
-        </div>
     </nav>
 
-    <!-- Main Text Content -->
     <main class="main-content">
         <div class="content-wrapper">
-            <span class="date">July 16, 2026</span>
-            <h1 class="article-title">Notes on the Architecture of a Modern Mind</h1>
-            <div class="prose">
-                <p>It begins, as it often does, with a division. The world outside is a vibrant, unknowable green, framed by a structure that attempts to contain it. This is the essential tension we navigate: the internal landscape of thought and the external geography of experience. We sit here, illuminated by a slice of harsh, geometric light, much like the subject in `image_0.png` who is anchored by both a verdant view and a stark interior shadow.</p>
-                <p>Our words, transcribed in ink, are merely attempts to bridge this divide. This journal exists to explore that liminal space—the threshold where the architectural meets the organic, where the private act of creation meets the public need for discourse. We seek work that embodies this specific tension: clean, precise, and yet raw with meaning.</p>
-                <p>We invite you to cross over.</p>
+            <h1>Archive</h1>
+            
+            <!-- Placeholder for your image -->
+            <div class="image-placeholder">
+                [Space for Site Visual / Architecture Image]
             </div>
+
+            <p>Welcome to the digital archive. This site serves as a container for literary experiments, theoretical texts, and ongoing workshops. We operate at the intersection of the organic and the built environment.</p>
+
+            <section class="updates-section">
+                <h2>Updates</h2>
+                <div class="update-item">
+                    <span class="update-date">July 08, 2026</span>
+                    <p>New essay on digital decay added to the "Texts" section.</p>
+                </div>
+                <div class="update-item">
+                    <span class="update-date">June 25, 2026</span>
+                    <p>Applications for the upcoming Autumn workshop are now open.</p>
+                </div>
+            </section>
         </div>
     </main>
 
