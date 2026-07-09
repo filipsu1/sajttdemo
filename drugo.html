@@ -1,1 +1,87 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Writer Name</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 5vh 5vw;
+            background: #fcf8e3;
+            color: #0a0a0a;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10vw;
+            align-items: start;
+        }
+
+        /* Hero takes the full width of the first column */
+        .hero { grid-column: 1 / -1; margin-bottom: 10vh; }
+        .hero img { width: 100%; height: 70vh; object-fit: cover; }
+
+        /* Typography is large to fill space */
+        h1 { font-size: 8vw; margin: 0; font-weight: 400; line-height: 0.9; }
+        .manifesto { font-size: 3rem; margin: 5vh 0; font-style: italic; }
+
+        /* Projects take up left column */
+        .work-list { list-style: none; padding: 0; margin-top: 10vh; }
+        .work-item { margin-bottom: 8vh; }
+        .work-title { font-size: 2.5rem; display: block; }
+        .work-meta { font-size: 1.2rem; color: #777; margin-top: 10px; }
+
+        /* Updates are right-aligned and large */
+        .update-list { list-style: none; padding: 0; margin: 0; }
+        .update-item { border-top: 1px solid #0a0a0a; padding: 3vh 0; font-size: 1.5rem; }
+        .update-date { display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1vh; }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <img src="YOUR_IMAGE.jpg" alt="Featured Work">
+    </div>
+
+    <div class="container">
+        <main>
+            <h1>Writer<br>Name</h1>
+            <div class="manifesto">
+                "Writing is the architecture of the digital archive—a site where memory inevitably decays into structure."
+            </div>
+
+            <ul class="work-list">
+                <li class="work-item">
+                    <span class="work-title">Title of Piece I</span>
+                    <span class="work-meta">Published in The Literary Review, 2026</span>
+                </li>
+                <li class="work-item">
+                    <span class="work-title">Title of Piece II</span>
+                    <span class="work-meta">XYZ Award Shortlist, 2026</span>
+                </li>
+            </ul>
+        </main>
+
+        <aside>
+            <ul class="update-list">
+                <li class="update-item">
+                    <span class="update-date">08.07.26</span>
+                    New essay live in The Journal.
+                </li>
+                <li class="update-item">
+                    <span class="update-date">07.01.26</span>
+                    Commencing research residency.
+                </li>
+                <li class="update-item">
+                    <span class="update-date">06.15.26</span>
+                    Participative project finalized.
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+</body>
+</html>
