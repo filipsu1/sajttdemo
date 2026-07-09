@@ -6,77 +6,118 @@
     <style>
         body {
             margin: 0;
-            padding: 5vh 5vw;
-            background: #fcf8e3;
-            color: #0a0a0a;
-            font-family: 'Times New Roman', serif;
+            background: #f4eee0;
+            color: #2a2a2a;
+            font-family: 'Times New Roman', Times, serif;
         }
 
-        .container {
-            max-width: 1200px; 
-            margin: 0 auto;
+        /* Centered container */
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto; /* This centers the site */
+            display: grid;
+            grid-template-columns: 1fr 300px; /* Main content + sidebar */
+            border-left: 1px solid #dcd1bc;
+            border-right: 1px solid #dcd1bc;
         }
 
-        /* Intro section */
-        .intro { margin-bottom: 5vh; }
-        h1 { font-size: 8vw; margin: 0; font-weight: 400; line-height: 0.9; }
-        .manifesto { font-size: 3rem; margin: 5vh 0; font-style: italic; max-width: 800px; }
-
-        .hero { margin-bottom: 10vh; }
-        .hero img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
+        nav { 
+            grid-column: 1 / -1; 
+            padding: 40px 60px; 
+            border-bottom: 1px solid #dcd1bc;
+            display: flex; 
+            justify-content: space-between; 
+            text-transform: uppercase; 
+            font-size: 9px; 
+            letter-spacing: 0.3em;
         }
 
-        .content { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 10vw; 
+        main { padding: 60px; border-right: 1px solid #dcd1bc; }
+
+        h1 { font-size: 7rem; margin: 0 0 80px 0; font-weight: 400; line-height: 0.8; letter-spacing: -0.05em; }
+
+        .hero-img { margin-bottom: 60px; }
+        .hero-img img { width: 100%; display: block; border: 1px solid #dcd1bc; }
+
+        .about-section { 
+            margin-bottom: 100px; 
+            padding: 40px 0; 
+            border-top: 1px solid #dcd1bc; 
+            border-bottom: 1px solid #dcd1bc;
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 450px;
         }
 
-        .work-list { list-style: none; padding: 0; }
-        .work-item { margin-bottom: 8vh; }
-        .work-title { font-size: 2.5rem; display: block; }
-        .work-meta { font-size: 1.2rem; color: #777; margin-top: 10px; }
+        .work-item { margin-bottom: 100px; }
+        .work-title { font-size: 2.5rem; font-style: italic; margin-bottom: 20px; line-height: 1; }
+        .work-thumb { width: 100%; max-width: 300px; height: auto; display: block; border: 1px solid #dcd1bc; margin-bottom: 15px; }
+        .work-meta { font-family: sans-serif; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: #777; }
 
-        .update-list { list-style: none; padding: 0; }
-        .update-item { border-top: 1px solid #0a0a0a; padding: 3vh 0; font-size: 1.5rem; }
-        .update-date { display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 1vh; }
+        aside { 
+            background: #efe7d5; 
+            padding: 60px; 
+            position: sticky; 
+            top: 0; 
+            height: 100vh; 
+            overflow-y: auto;
+        }
+        .updates-title { font-size: 8px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 60px; color: #000; }
+        .update-item { margin-bottom: 40px; border-bottom: 1px solid #dcd1bc; padding-bottom: 20px; }
+        .update-date { display: block; color: #8b4513; margin-bottom: 8px; font-weight: bold; font-family: sans-serif; font-size: 7px; text-transform: uppercase; letter-spacing: 0.1em; }
+        .update-text { font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="intro">
-            <h1>naslov</h1>
-            <div class="manifesto">
-opis            </div>
-        </div>
+    <div class="page-wrapper">
+        <nav>
+            <span>Naslov</span>
+            <div>
+                <a href="#" style="color:#2a2a2a; text-decoration:none; margin-left: 30px;">eseji</a>
+                <a href="#" style="color:#2a2a2a; text-decoration:none; margin-left: 30px;">poezija</a>
+                <a href="#" style="color:#2a2a2a; text-decoration:none; margin-left: 30px;">proza</a>
+                <a href="#" style="color:#2a2a2a; text-decoration:none; margin-left: 30px;">radionice</a>
 
-        <!-- Now uses intrinsic sizing -->
-        <div class="hero">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5q5xaq4mREHN2A2BNFff_aXw5TLfNQ5bz2JtEDE4ZH89TSJ0753Pli2A&s=10" alt="demo slika">
-        </div>
+                <a href="#" style="color:#2a2a2a; text-decoration:none; margin-left: 30px;">kontakt</a>
 
-        <div class="content">
-            <main>
-                <ul class="work-list">
-                    <li class="work-item">
-                        <span class="work-title">naslov dela?</span>
-                        <span class="work-meta">podtekst</span>
-                    </li>
-                </ul>
-            </main>
+            </div>
+        </nav>
 
-            <aside>
-                <ul class="update-list">
-                    <li class="update-item">
-                        <span class="update-date">19.07.26</span>
-tekst                    </li>
-                </ul>
-            </aside>
-        </div>
+        <main>
+            <h1>Naslov <br>sajta</h1>
+
+            <div class="hero-img">
+                <img src="https://m.media-amazon.com/images/I/71VfnzmPIzL._AC_UF894,1000_QL80_.jpg" alt="placeholder slika">
+            </div>
+
+            <div class="about-section">
+Opis             </div>
+
+            <div class="work-item">
+                <div class="work-title">naslov</div>
+                <img src="https://images.stockcake.com/public/5/b/1/5b16cd96-8b6f-4e5f-a38a-7d8dbd520b8f_large/ancient-opened-book-stockcake.jpg" class="work-thumb" alt="Thumbnail">
+                <div class="work-meta">opis...(read more)</div>
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">naslov</div>
+                <img src="https://images.stockcake.com/public/5/b/1/5b16cd96-8b6f-4e5f-a38a-7d8dbd520b8f_large/ancient-opened-book-stockcake.jpg" class="work-thumb" alt="Thumbnail">
+                <div class="work-meta">opis...(read more)</div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="updates-title">najnovije (updates)</div>
+            <div class="update-item">
+                <span class="update-date">08.07.26</span>
+                <div class="update-text">tekst.</div>
+            </div>
+            <div class="update-item">
+                <span class="update-date">07.01.26</span>
+                <div class="update-text">tekst</div>
+            </div>
+        </aside>
     </div>
 
 </body>
