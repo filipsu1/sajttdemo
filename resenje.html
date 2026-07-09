@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Writer Portfolio</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --accent: #ff3e00;
+            --border: #333333;
+        }
+
+        body {
+            margin: 0;
+            padding: 80px 5vw;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.4;
+        }
+
+        .wrapper { max-width: 1200px; margin: 0 auto; }
+
+        header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15vh; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .name { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; }
+        
+        nav { display: flex; gap: 40px; }
+        .nav-link { 
+            color: var(--text); 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.15em;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        .hero-layout { display: flex; gap: 8vw; align-items: flex-start; margin-bottom: 20vh; }
+        .hero-left { width: 50%; }
+        .feature-img { width: 100%; margin-bottom: 3vh; border: 1px solid var(--border); }
+        .feature-img img { width: 100%; display: block; }
+        .about-text { font-size: 1.1rem; color: #aaaaaa; }
+        
+        /* Text and Updates now share a container */
+        .hero-text { width: 40%; }
+        .hero-text h1 { font-size: 6rem; margin: 0 0 9vh 0; font-weight: 700; line-height: 0.95; letter-spacing: -0.05em; }
+
+        /* Updated column styling to fit within hero-text width */
+        .updates-col { width: 100%; }
+        .updates-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: #888; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .update-item { margin-bottom: 40px; font-size: 0.85rem; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .update-date { color: var(--accent); display: block; font-weight: bold; font-family: sans-serif; font-size: 0.7rem; margin-bottom: 5px; }
+
+        .content-stream { display: flex; justify-content: space-between; gap: 10vw; }
+        .work-list { width: 100%; list-style: none; padding: 0; }
+        .work-item { padding: 80px 0; border-top: 1px solid var(--border); }
+        .work-title { font-size: 3rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .work-img { width: 100%; max-width: 400px; height: auto; display: block; margin: 30px 0; border: 1px solid var(--border); }
+        .work-desc { font-size: 0.9rem; color: #888; max-width: 500px; }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="name">Naziv autora</div>
+            <nav>
+                <a href="#" class="nav-link">Eseji</a>
+                <a href="#" class="nav-link">Poezija</a>
+                <a href="#" class="nav-link">Radionice</a>
+                <a href="#" class="nav-link">Kontakt</a>
+            </nav>
+        </header>
+
+        <section class="hero-layout">
+            <div class="hero-left">
+                <div class="feature-img">
+                    <img src="https://www.researchgate.net/publication/390257595/figure/fig3/AS:11431281328895801@1743145686551/Hans-Haacke-Shapolsky-et-al-Manhattan-Real-Estate-Holdings-a-RealTime-Social-System.png" alt="placeholder">
+                </div>
+                <div class="about-text">kratka biografija/opis autora</div>
+            </div>
+            
+            <div class="hero-text">
+                <h1>Naslov<br>sajta.</h1>
+                
+                <!-- Updates moved here to sit below the title -->
+                <aside class="updates-col">
+                    <div class="updates-title">Najnovije</div>
+                    <div class="update-item">
+                        <span class="update-date">08.07.26</span>
+                        Placeholder tekst za novost.
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">07.01.26</span>
+                        Placeholder tekst za novost.
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="content-stream">
+            <main class="work-list">
+                <div class="work-item">
+                    <div class="work-title">Naslov dela 1</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTASg_nsracFIr9BIynwEf4b1Eb-oZCmHUJ-GFU0m_LMiTRN9XvQzX-gy8&s=10" alt="Naslov dela 1" class="work-img">
+                    <div class="work-desc">opis/detalji za rad</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">Naslov dela 2</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTASg_nsracFIr9BIynwEf4b1Eb-oZCmHUJ-GFU0m_LMiTRN9XvQzX-gy8&s=10" alt="Naslov dela 2" class="work-img">
+                    <div class="work-desc">par detalja o ovome</div>
+                </div>
+            </main>
+        </section>
+    </div>
+</body>
+</html>
