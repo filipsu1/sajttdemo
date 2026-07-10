@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <title>Writer's Retreat</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0 20px;
-            background: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Times New Roman', serif;
-        }
-
+        body { margin: 0; padding: 0 20px; background: #1a1a1a; color: #ffffff; font-family: 'Times New Roman', serif; }
         .container { max-width: 1000px; margin: 0 auto; padding-bottom: 100px; }
 
         header { display: flex; justify-content: space-between; padding: 15px 0; font-size: 14px; border-bottom: 1px solid #333; margin-bottom: 30px; }
@@ -19,36 +12,30 @@
         .hero-img { width: 100%; border-top: 1px solid #333; padding-top: 30px; margin-bottom: 60px; }
         .hero-img img { width: 100%; display: block; }
 
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
-        .readings-list { font-size: 14px; }
-        .bio-text { font-size: 14px; line-height: 1.5; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
         
-        /* NOVI STIL ZA ČLANKE (zamena za tabelu) */
-        .articles-section { border-top: 1px solid #fff; padding-top: 20px; }
-        .article-row { 
-            display: flex; 
-            justify-content: space-between; 
-            padding: 20px 0; 
-            border-bottom: 1px solid #333; 
-            transition: opacity 0.3s;
-            cursor: pointer;
-        }
-        .article-row:hover { opacity: 0.6; }
-        .article-meta { color: #888; font-style: italic; }
-.thumb {
-            width: 50px; 
-            height: 50px; 
-            object-fit: cover; /* ovo osigurava da slika uvek bude kvadratna i neistegnuta */
-            border: 1px solid #333;
-        }
-        
-        .article-row { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; /* da slika i tekst budu u vertikalnoj osi poravnati */
+        /* Grid tabela */
+        .schedule-table { display: flex; flex-direction: column; width: 100%; font-size: 13px; }
+        .row { 
+            display: grid; 
+            grid-template-columns: 60px 1fr 120px; 
             padding: 10px 0; 
             border-bottom: 1px solid #333; 
         }
+        .row.header { color: #888; font-size: 11px; text-transform: uppercase; border-bottom: 1px solid #fff; }
+        .status { color: #888; text-align: right; }
+
+        .bio-text { font-size: 14px; line-height: 1.5; }
+        
+        /* Arhiva članaka */
+        .articles-section { border-top: 1px solid #fff; padding-top: 20px; }
+        .article-row { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px 0; border-bottom: 1px solid #333; transition: opacity 0.3s; cursor: pointer;
+        }
+        .article-row:hover { opacity: 0.6; }
+        .article-meta { color: #888; font-style: italic; }
+        .thumb { width: 50px; height: 50px; object-fit: cover; border: 1px solid #333; }
     </style>
 </head>
 <body>
@@ -58,7 +45,6 @@
             <div>Radionice</div>
             <div>Eseji</div>
             <div>Poezija</div>
-
             <a href="#" style="color:#fff; text-decoration:none;">Kontakt ↗</a>
         </header>
 
@@ -69,17 +55,33 @@
         </div>
 
         <div class="info-grid">
-            <div class="readings-list">
-                <div style="font-weight:bold; margin-bottom:10px;">Raspored dešavanja/novosti</div>
-                <div>1. Događaj 1</div>
-                <div>2. Događaj 2</div>
+            <div class="schedule-section">
+                <div style="font-weight:bold; margin-bottom:20px; font-size: 14px;">Raspored dešavanja</div>
+                <div class="schedule-table">
+                    <div class="row header">
+                        <span>Datum</span>
+                        <span>Događaj</span>
+                        <span style="text-align: right;">lokacija(npr)</span>
+                    </div>
+                    <div class="row">
+                        <span>08.07</span>
+                        <span>Radionica A</span>
+                        <span class="status">x</span>
+                    </div>
+                    <div class="row">
+                        <span>15.07</span>
+                        <span>Čitanje poezije</span>
+                        <span class="status">x</span>
+                    </div>
+                </div>
             </div>
+
             <div class="bio-text">
                 Biografija, opis autorskih dela...<br>
                 <a href="#" style="color:#fff;">Učitaj još...</a>
             </div>
         </div>
-<!-- Sekcija sa člancima i thumbnail-ovima -->
+
         <div class="articles-section">
             <div style="font-size: 12px; color: #888; margin-bottom: 20px;">Arhiva članaka</div>
             
@@ -87,7 +89,7 @@
                 <div class="article-row">
                     <div style="display:flex; align-items:center; gap: 20px;">
                         <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
-                        <span>Naslov teksta</span>
+                        <span>Naslov teksta 1</span>
                     </div>
                     <span class="article-meta">08.07.2026</span>
                 </div>
@@ -97,12 +99,12 @@
                 <div class="article-row">
                     <div style="display:flex; align-items:center; gap: 20px;">
                         <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
-                        <span>Naslov teksta</span>
+                        <span>Naslov teksta 2</span>
                     </div>
                     <span class="article-meta">02.07.2026</span>
                 </div>
             </a>
         </div>
-
+    </div>
 </body>
 </html>
