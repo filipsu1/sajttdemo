@@ -9,66 +9,100 @@
             padding: 0 20px;
             background: #1a1a1a;
             color: #ffffff;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Times New Roman', serif;
         }
 
         .container { max-width: 1000px; margin: 0 auto; padding-bottom: 100px; }
 
-        /* Existing Header and Hero styles from previous step */
         header { display: flex; justify-content: space-between; padding: 15px 0; font-size: 14px; border-bottom: 1px solid #333; margin-bottom: 30px; }
         h1 { font-size: 7rem; font-weight: 800; margin: 0 0 30px 0; letter-spacing: -0.05em; line-height: 0.9; }
         .hero-img { width: 100%; border-top: 1px solid #333; padding-top: 30px; margin-bottom: 60px; }
         .hero-img img { width: 100%; display: block; }
 
-        /* New Content Area */
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
         .readings-list { font-size: 14px; }
         .bio-text { font-size: 14px; line-height: 1.5; }
         
-        /* Table Styling */
-        table { width: 100%; border-collapse: collapse; font-size: 14px; border-top: 1px solid #fff; }
-        th, td { text-align: left; padding: 10px 0; border-bottom: 1px solid #333; }
-        .table-title { font-size: 12px; color: #888; margin-bottom: 10px; }
+        /* NOVI STIL ZA ČLANKE (zamena za tabelu) */
+        .articles-section { border-top: 1px solid #fff; padding-top: 20px; }
+        .article-row { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 20px 0; 
+            border-bottom: 1px solid #333; 
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+        .article-row:hover { opacity: 0.6; }
+        .article-meta { color: #888; font-style: italic; }
+.thumb {
+            width: 50px; 
+            height: 50px; 
+            object-fit: cover; /* ovo osigurava da slika uvek bude kvadratna i neistegnuta */
+            border: 1px solid #333;
+        }
+        
+        .article-row { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; /* da slika i tekst budu u vertikalnoj osi poravnati */
+            padding: 10px 0; 
+            border-bottom: 1px solid #333; 
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <div>Cargo™ Demo</div>
-            <div>Information</div>
-            <a href="#" style="color:#fff;">Mail, IG ↗</a>
+            <div>Radionice</div>
+            <div>Eseji</div>
+            <div>Poezija</div>
+
+            <a href="#" style="color:#fff; text-decoration:none;">Kontakt ↗</a>
         </header>
 
-        <h1>Writer’s<br>Retreat</h1>
+        <h1>Naziv<br>Sajta</h1>
 
         <div class="hero-img">
-            <img src="https://freight.cargo.site/w/1000/i/V2753988137244703944500098564391/Writer-in-Room.jpg" alt="Writer's Retreat">
+            <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=16:9&fit=crop" alt="Writer's Retreat">
         </div>
 
-        <!-- Bio and Readings Section -->
         <div class="info-grid">
             <div class="readings-list">
-                <div style="font-weight:bold; margin-bottom:10px;">Readings Mon–Sat</div>
-                <div>1. Marcel Proust — <i>À la recherche du temps perdu</i></div>
-                <div>2. Samuel Beckett — <i>Proust</i></div>
+                <div style="font-weight:bold; margin-bottom:10px;">Raspored dešavanja/novosti</div>
+                <div>1. Događaj 1</div>
+                <div>2. Događaj 2</div>
             </div>
             <div class="bio-text">
-                Prof. Olivia Theyskens, born April 15, 1976, is a fictitious American literary critic... <a href="#" style="color:#fff;">Read more...</a>
+                Biografija, opis autorskih dela...<br>
+                <a href="#" style="color:#fff;">Učitaj još...</a>
             </div>
         </div>
-
-        <!-- Schedule Table -->
-        <div class="table-title">Readings 1–6</div>
-        <table>
-            <tr><td>Monday</td><td>Proust</td><td>Selection 1</td><td>1</td></tr>
-            <tr><td>Tuesday</td><td>Proust</td><td>Selection 2</td><td>2</td></tr>
-            <tr><td>Wednesday</td><td>Proust</td><td>Selection 3</td><td>3</td></tr>
-            <tr><td>Thursday</td><td>Beckett</td><td>Part 1</td><td>4</td></tr>
-            <tr><td>Friday</td><td>Beckett</td><td>Part 2</td><td>5</td></tr>
-            <tr><td>Saturday</td><td>Beckett</td><td>Part 3</td><td>6</td></tr>
-        </table>
-    </div>
+<!-- Sekcija sa člancima i thumbnail-ovima -->
+        <div class="articles-section">
+            <div style="font-size: 12px; color: #888; margin-bottom: 20px;">Arhiva članaka</div>
+            
+            <a href="#" style="text-decoration:none; color:inherit;">
+                <div class="article-row">
+                    <div style="display:flex; align-items:center; gap: 20px;">
+                        <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
+                        <span>Naslov teksta</span>
+                    </div>
+                    <span class="article-meta">08.07.2026</span>
+                </div>
+            </a>
+            
+            <a href="#" style="text-decoration:none; color:inherit;">
+                <div class="article-row">
+                    <div style="display:flex; align-items:center; gap: 20px;">
+                        <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
+                        <span>Naslov teksta</span>
+                    </div>
+                    <span class="article-meta">02.07.2026</span>
+                </div>
+            </a>
+        </div>
 
 </body>
 </html>
