@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test sajt</title>
+    <title>Writer's Retreat</title>
     <style>
-        body { margin: 0; padding: 0 20px; background: #1a1a1a; color: #ffffff; font-family: 'Times New Roman', serif; }
+        :root {
+            --bg: #f4f1ea;
+            --text: #2d5a3a;      /* Svetlija, življa zelena */
+            --accent: #3a7a4c;    /* Akcentna zelena */
+            --border: #c8c5bc;
+        }
+
+        body { 
+            margin: 0; padding: 0 20px; 
+            background: var(--bg); 
+            color: var(--text);   /* j */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+        }
         .container { max-width: 1000px; margin: 0 auto; padding-bottom: 100px; }
 
-        header { display: flex; justify-content: space-between; padding: 15px 0; font-size: 14px; border-bottom: 1px solid #333; margin-bottom: 30px; }
-        h1 { font-size: 7rem; font-weight: 800; margin: 0 0 30px 0; letter-spacing: -0.05em; line-height: 0.9; }
-        .hero-img { width: 100%; border-top: 1px solid #333; padding-top: 30px; margin-bottom: 60px; }
+        header { display: flex; justify-content: space-between; padding: 15px 0; font-size: 14px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+        h1 { font-size: 7rem; font-weight: 800; margin: 0 0 30px 0; letter-spacing: -0.05em; line-height: 0.9; color: var(--text); }
+        
+        .hero-img { width: 100%; border-top: 1px solid var(--border); padding-top: 30px; margin-bottom: 60px; }
         .hero-img img { width: 100%; display: block; }
 
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
         
-        /* Grid tabela */
+        /* Tabela */
         .schedule-table { display: flex; flex-direction: column; width: 100%; font-size: 13px; }
-        .row { 
-            display: grid; 
-            grid-template-columns: 60px 1fr 120px; 
-            padding: 10px 0; 
-            border-bottom: 1px solid #333; 
-        }
-        .row.header { color: #888; font-size: 11px; text-transform: uppercase; border-bottom: 1px solid #fff; }
-        .status { color: #888; text-align: right; }
+        .row { display: grid; grid-template-columns: 60px 1fr 120px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .row.header { color: var(--accent); font-size: 11px; text-transform: uppercase; border-bottom: 1px solid var(--accent); }
+        .status { color: var(--accent); text-align: right; }
 
-        .bio-text { font-size: 14px; line-height: 1.5; }
+        .bio-text { font-size: 14px; line-height: 1.5; color: var(--text); }
         
-        /* Arhiva članaka */
-        .articles-section { border-top: 1px solid #fff; padding-top: 20px; }
-        .article-row { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 15px 0; border-bottom: 1px solid #333; transition: opacity 0.3s; cursor: pointer;
-        }
-        .article-row:hover { opacity: 0.6; }
-        .article-meta { color: #888; font-style: italic; }
-        .thumb { width: 50px; height: 50px; object-fit: cover; border: 1px solid #333; }
+        /* Članci */
+        .articles-section { border-top: 1px solid var(--accent); padding-top: 20px; }
+        .article-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--border); transition: 0.3s; }
+        .article-row:hover { color: var(--accent); }
+        .article-meta { color: var(--accent); font-style: italic; }
+        .thumb { width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--border); }
+
+        a { color: var(--text); text-decoration: none; }
+        a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -45,63 +53,48 @@
             <div>Radionice</div>
             <div>Eseji</div>
             <div>Poezija</div>
-            <a href="#" style="color:#fff; text-decoration:none;">Kontakt ↗</a>
+            <a href="#">Kontakt ↗</a>
         </header>
 
         <h1>Naziv<br>Sajta</h1>
 
         <div class="hero-img">
-            <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=16:9&fit=crop" alt="Writer's Retreat">
+            <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=16:9&fit=crop" alt="Hero">
         </div>
 
         <div class="info-grid">
             <div class="schedule-section">
-                <div style="font-weight:bold; margin-bottom:20px; font-size: 14px;">Raspored dešavanja</div>
+                <div style="font-weight:bold; margin-bottom:20px; font-size: 14px; color: var(--accent);">Raspored dešavanja</div>
                 <div class="schedule-table">
                     <div class="row header">
                         <span>Datum</span>
                         <span>Događaj</span>
-                        <span style="text-align: right;">lokacija(npr)</span>
+                        <span style="text-align: right;">Lokacija</span>
                     </div>
                     <div class="row">
                         <span>08.07</span>
-                        <span>Radionica </span>
-                        <span class="status">x</span>
-                    </div>
-                    <div class="row">
-                        <span>15.07</span>
-                        <span>Radionica</span>
-                        <span class="status">x</span>
+                        <span>Radionica 1</span>
+                        <span class="status">Beograd</span>
                     </div>
                 </div>
             </div>
 
             <div class="bio-text">
-                Biografija, opis autorskih dela...<br>
-                <a href="#" style="color:#fff;">Učitaj još...</a>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+<br>
+                <a href="#" style="text-decoration: underline;">Učitaj još...</a>
             </div>
         </div>
 
         <div class="articles-section">
-            <div style="font-size: 12px; color: #888; margin-bottom: 20px;">Arhiva članaka</div>
-            
-            <a href="#" style="text-decoration:none; color:inherit;">
+            <div style="font-size: 12px; color: var(--accent); margin-bottom: 20px; text-transform: uppercase;">Arhiva članaka</div>
+            <a href="#">
                 <div class="article-row">
                     <div style="display:flex; align-items:center; gap: 20px;">
                         <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
                         <span>Naslov teksta 1</span>
                     </div>
                     <span class="article-meta">08.07.2026</span>
-                </div>
-            </a>
-            
-            <a href="#" style="text-decoration:none; color:inherit;">
-                <div class="article-row">
-                    <div style="display:flex; align-items:center; gap: 20px;">
-                        <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
-                        <span>Naslov teksta 2</span>
-                    </div>
-                    <span class="article-meta">02.07.2026</span>
                 </div>
             </a>
         </div>
