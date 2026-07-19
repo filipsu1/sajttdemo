@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Writer's Retreat</title>
+    <title>Marija Andrijašević</title>
     <style>
         :root {
             --bg: #f4f1ea;
@@ -17,6 +17,7 @@
         header { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 50px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
         h1 { font-size: 8rem; font-weight: 800; margin: 0 0 50px 0; letter-spacing: -0.05em; line-height: 0.9; }
         
+        /* SLIDER */
         .hero-slider { 
             width: 100%; height: 650px; position: relative; 
             margin-bottom: 80px; display: flex; align-items: center; justify-content: center;
@@ -29,6 +30,7 @@
         .slide.active { opacity: 1; pointer-events: auto; }
         .slide img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
+        /* DUGMIĆI */
         .btn {
             position: absolute; top: 50%; transform: translateY(-50%);
             background: rgba(255,255,255,0.8); border: 1px solid var(--border);
@@ -37,6 +39,18 @@
         .btn:hover { background: var(--accent); color: white; }
         .prev { left: -50px; }
         .next { right: -50px; }
+
+        /* OSTATAK STRANICE */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; margin-bottom: 80px; }
+        .row { display: grid; grid-template-columns: 80px 1fr 100px; padding: 15px 0; border-bottom: 1px solid var(--border); }
+        .row.header { color: var(--accent); font-size: 11px; text-transform: uppercase; }
+        .status { color: var(--accent); text-align: right; }
+        .bio-text { font-size: 14px; line-height: 1.5; }
+        .articles-section { border-top: 1px solid var(--accent); padding-top: 20px; }
+        .article-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); }
+        .thumb { width: 60px; height: 60px; object-fit: cover; border: 1px solid var(--border); }
+        a { color: var(--text); text-decoration: none; }
+        a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -60,16 +74,41 @@
             <button class="btn prev" id="prevBtn">❮</button>
             <button class="btn next" id="nextBtn">❯</button>
         </div>
+
+        <div class="info-grid">
+            <div class="schedule-section">
+                <div style="font-weight:bold; margin-bottom:20px; color: var(--accent);">RASPORED</div>
+                <div class="row header"><span>Datum</span><span>Događaj</span><span>Lokacija</span></div>
+                <div class="row"><span>08.07</span><span>Radionica 1</span><span class="status">Split</span></div>
+                <div class="row"><span>08.07</span><span>Radionica 2</span><span class="status">Split</span></div>
+            </div>
+            <div class="bio-text">
+                Ovo je prostor za biografiju ili uvodni tekst o projektu. <br><br>
+                <a href="#">Učitaj još ↗</a>
+            </div>
+        </div>
+
+        <div class="articles-section">
+            <div style="font-size: 12px; color: var(--accent); margin-bottom: 20px; text-transform: uppercase;">Arhiva članaka</div>
+            <a href="#">
+                <div class="article-row">
+                    <div style="display:flex; align-items:center; gap: 20px;">
+                        <img src="https://i.imgur.com/VDKx2tY.jpeg" class="thumb">
+                        <span>Naslov teksta 1</span>
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 
-    <!-- JS se uvek stavlja ovde, na sam kraj, da bi HTML bio spreman -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
+            const slider = document.getElementById('slider');
             let index = 0;
-            let autoPlayInterval;
+            let timer;
 
             function showSlide(newIndex) {
                 slides[index].classList.remove('active');
@@ -78,28 +117,24 @@
             }
 
             function startTimer() {
-                autoPlayInterval = setInterval(() => showSlide(index + 1), 7000);
+                timer = setInterval(() => showSlide(index + 1), 5000);
             }
 
-            // Dugmići
             prevBtn.addEventListener('click', () => {
-                clearInterval(autoPlayInterval);
+                clearInterval(timer);
                 showSlide(index - 1);
                 startTimer();
             });
 
             nextBtn.addEventListener('click', () => {
-                clearInterval(autoPlayInterval);
+                clearInterval(timer);
                 showSlide(index + 1);
                 startTimer();
             });
 
-            // Hover pauza
-            const slider = document.getElementById('slider');
-            slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            slider.addEventListener('mouseenter', () => clearInterval(timer));
             slider.addEventListener('mouseleave', startTimer);
 
-            // Startuj odmah
             startTimer();
         });
     </script>
