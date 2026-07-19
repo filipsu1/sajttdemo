@@ -6,44 +6,37 @@
     <style>
         :root {
             --bg: #f4f1ea;
-            --text: #2d5a3a;      /* Svetlija, življa zelena */
-            --accent: #3a7a4c;    /* Akcentna zelena */
+            --text: #2d5a3a;
+            --accent: #3a7a4c;
             --border: #c8c5bc;
         }
 
-        body { 
-            margin: 0; padding: 0 20px; 
-            background: var(--bg); 
-            color: var(--text);   /* j */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+        body { margin: 0; padding: 0 20px; background: var(--bg); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        .container { max-width: 1100px; margin: 0 auto; padding-bottom: 100px; }
+
+        header { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 50px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { font-size: 8rem; font-weight: 800; margin: 0 0 50px 0; letter-spacing: -0.05em; line-height: 0.9; }
+        
+        .hero-slider { 
+            width: 100%; height: 650px; position: relative; 
+            margin-bottom: 80px; display: flex; align-items: center; justify-content: center;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding-bottom: 100px; }
+        .slide { 
+            position: absolute; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 0.7s ease-in-out;
+            pointer-events: none; display: flex; align-items: center; justify-content: center;
+        }
+        .slide.active { opacity: 1; pointer-events: auto; }
+        .slide img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
-        header { display: flex; justify-content: space-between; padding: 15px 0; font-size: 14px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
-        h1 { font-size: 7rem; font-weight: 800; margin: 0 0 30px 0; letter-spacing: -0.05em; line-height: 0.9; color: var(--text); }
-        
-        .hero-img { width: 100%; border-top: 1px solid var(--border); padding-top: 30px; margin-bottom: 60px; }
-        .hero-img img { width: 100%; display: block; }
-
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; }
-        
-        /* Tabela */
-        .schedule-table { display: flex; flex-direction: column; width: 100%; font-size: 13px; }
-        .row { display: grid; grid-template-columns: 60px 1fr 120px; padding: 10px 0; border-bottom: 1px solid var(--border); }
-        .row.header { color: var(--accent); font-size: 11px; text-transform: uppercase; border-bottom: 1px solid var(--accent); }
-        .status { color: var(--accent); text-align: right; }
-
-        .bio-text { font-size: 14px; line-height: 1.5; color: var(--text); }
-        
-        /* Članci */
-        .articles-section { border-top: 1px solid var(--accent); padding-top: 20px; }
-        .article-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--border); transition: 0.3s; }
-        .article-row:hover { color: var(--accent); }
-        .article-meta { color: var(--accent); font-style: italic; }
-        .thumb { width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--border); }
-
-        a { color: var(--text); text-decoration: none; }
-        a:hover { color: var(--accent); }
+        .btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.8); border: 1px solid var(--border);
+            padding: 20px; cursor: pointer; z-index: 10; transition: 0.3s;
+        }
+        .btn:hover { background: var(--accent); color: white; }
+        .prev { left: -50px; }
+        .next { right: -50px; }
     </style>
 </head>
 <body>
@@ -58,74 +51,57 @@
 
         <h1>Naziv<br>Sajta</h1>
 
-        <div class="hero-img">
-            <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=16:9&fit=crop" alt="Hero">
-        </div>
-
-        <div class="info-grid">
-            <div class="schedule-section">
-                <div style="font-weight:bold; margin-bottom:20px; font-size: 14px; color: var(--accent);">Raspored dešavanja</div>
-                <div class="schedule-table">
-                    <div class="row header">
-                        <span>Datum</span>
-                        <span>Događaj</span>
-                        <span style="text-align: right;">Lokacija</span>
-                    </div>
-                    <div class="row">
-                        <span>08.07</span>
-                        <span>Radionica 1</span>
-                        <span class="status">Split</span>
-                    </div>
-        
-                    <div class="row">
-                        <span>08.07</span>
-                        <span>Radionica 2</span>
-                        <span class="status">Split</span>
-                    </div>
-        <div class="row">
-                        <span>08.07</span>
-                        <span>Radionica 3</span>
-                        <span class="status">Split</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bio-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-<br>
-                <a href="#" style="text-decoration: underline;">Učitaj još...</a>
-            </div>
-        </div>
-
-        <div class="articles-section">
-            <div style="font-size: 12px; color: var(--accent); margin-bottom: 20px; text-transform: uppercase;">Arhiva članaka</div>
-            <a href="#">
-                <div class="article-row">
-                    <div style="display:flex; align-items:center; gap: 20px;">
-                        <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
-                        <span>Naslov teksta 1</span>
-
-                    </div>
-                    <span class="article-meta">08.07.2026</span>
-                </div>
- <div class="article-row">
-                    <div style="display:flex; align-items:center; gap: 20px;">
-                        <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
-                        <span>Naslov teksta 2</span>
-
-                    </div>
-                    <span class="article-meta">08.07.2026</span>
-                </div>
- <div class="article-row">
-                    <div style="display:flex; align-items:center; gap: 20px;">
-                        <img src="https://images2.dwell.com/photos/6108721555494141952/6159075144206041088/original.jpg?ar=1:1&fit=crop" class="thumb">
-                        <span>Naslov teksta 3</span>
-
-                    </div>
-                    <span class="article-meta">08.07.2026</span>
-                </div>
-            </a>
+        <div class="hero-slider" id="slider">
+            <div class="slide active"><img src="https://i.imgur.com/VDKx2tY.jpeg" alt="Slika 1"></div>
+            <div class="slide"><img src="https://i.imgur.com/h8Yv6Jp.jpeg" alt="Slika 2"></div>
+            <div class="slide"><img src="https://i.imgur.com/ID2Pew1.jpeg" alt="Slika 3"></div>
+            <div class="slide"><img src="https://i.imgur.com/B46NENg.jpeg" alt="Slika 4"></div>
+            
+            <button class="btn prev" id="prevBtn">❮</button>
+            <button class="btn next" id="nextBtn">❯</button>
         </div>
     </div>
+
+    <!-- JS se uvek stavlja ovde, na sam kraj, da bi HTML bio spreman -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let index = 0;
+            let autoPlayInterval;
+
+            function showSlide(newIndex) {
+                slides[index].classList.remove('active');
+                index = (newIndex + slides.length) % slides.length;
+                slides[index].classList.add('active');
+            }
+
+            function startTimer() {
+                autoPlayInterval = setInterval(() => showSlide(index + 1), 7000);
+            }
+
+            // Dugmići
+            prevBtn.addEventListener('click', () => {
+                clearInterval(autoPlayInterval);
+                showSlide(index - 1);
+                startTimer();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                clearInterval(autoPlayInterval);
+                showSlide(index + 1);
+                startTimer();
+            });
+
+            // Hover pauza
+            const slider = document.getElementById('slider');
+            slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            slider.addEventListener('mouseleave', startTimer);
+
+            // Startuj odmah
+            startTimer();
+        });
+    </script>
 </body>
 </html>
